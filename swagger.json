@@ -1,0 +1,373 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0",
+    "title": "Bookfinder",
+    "contact": {}
+  },
+  "host": "localhost:5000",
+  "basePath": "/api",
+  "securityDefinitions": {},
+  "schemes": [
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/auth/createuser": {
+      "post": {
+        "summary": "Create New User",
+        "tags": [
+          "Authentication"
+        ],
+        "operationId": "CreateNewUser",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": false,
+            "enum": [
+              "application/json"
+            ],
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/CreateNewUserRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/auth/login":{
+      "post": {
+        "summary": "User Login",
+        "tags": [
+          "Authentication"
+        ],
+        "operationId": "loginuser",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "application/json"
+            ],
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/auth/getuser": {
+      "post": {
+        "summary": "fetch user data",
+        "tags": [
+          "Authentication"
+        ],
+        "operationId": "fetchuserdata",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "auth-token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/books/getbooks": {
+      "get": {
+        "summary": "Fetch all Books",
+        "tags": [
+          "Books"
+        ],
+        "operationId": "FetchallBooks",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "auth-token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/books/addbooks": {
+      "post": {
+        "summary": "Add Books",
+        "tags": [
+          "Books"
+        ],
+        "operationId": "AddBooks",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/AddBooksRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/books/findbook": {
+      "post": {
+        "summary": "Find a Book",
+        "tags": [
+          "Books"
+        ],
+        "operationId": "FindaBook",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "auth-token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": false,
+            "enum": [
+              "application/json"
+            ],
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Body",
+            "in": "body",
+            "required": true,
+            "description": "",
+            "schema": {
+              "$ref": "#/definitions/FindaBookRequest"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    },
+    "/books/deletebook/62b3f9841b29311ec600f1c5": {
+      "delete": {
+        "summary": "Delete a Book",
+        "tags": [
+          "Books"
+        ],
+        "operationId": "DeleteaBook",
+        "deprecated": false,
+        "produces": [
+          "application/json"
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "auth-token",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "description": ""
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "required": false,
+            "enum": [
+              "application/json"
+            ],
+            "type": "string",
+            "description": ""
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "CreateNewUserRequest": {
+      "title": "CreateNewUserRequest",
+      "example": {
+        "name": "Joey Tribiani",
+        "email": "JTribiani@gmail.com",
+        "password": "howyoudoin"
+      },
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "email",
+        "password"
+      ]
+    },
+    "UserLoginRequest": {
+      "title": "UserLoginRequest",
+      "example": {
+        "email": "JTribiani@gmail.com",
+        "password": "howyoudoin"
+      },
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "email",
+        "password"
+      ]
+    },
+    "AddBooksRequest": {
+      "title": "AddBooksRequest",
+      "example": {
+        "title": "Gandhi Truth",
+        "auther": "MAHADEV DESAI",
+        "category": "Biography",
+        "pdfLink": "https://drive.google.com/file/d/1Eoai882OhWsMSIb1PPaoGlTZqaMW0iYm/view?usp=sharing"
+      },
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "auther": {
+          "type": "string"
+        },
+        "category": {
+          "type": "string"
+        },
+        "pdfLink": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "title",
+        "auther",
+        "category",
+        "pdfLink"
+      ]
+    },
+    "FindaBookRequest": {
+      "title": "FindaBookRequest",
+      "example": {
+        "searchByCategory": "Technology"
+      },
+      "type": "object",
+      "properties": {
+        "searchByCategory": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "searchByCategory"
+      ]
+    }
+  },
+  "tags": [
+    {
+      "name": "Authentication"
+    },
+    {
+      "name": "Books"
+    }
+  ]
+}

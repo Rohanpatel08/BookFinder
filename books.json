@@ -1,0 +1,34 @@
+{
+    "status": "ok",
+    "totalResults": 4,
+    "books": [
+        {
+            "id": 1,
+            "title": "Rohan",
+            "description": "rohan@mail.com",
+            "author": "12345678",
+            "pdfLink": "https://drive.google.com/file/d/1wnkLCoufS8STcBqNkEJRtXfbOy27XCD2/view?usp=sharing"
+        },
+        {
+            "id": 2,
+            "title": "Raj",
+            "description": "raj@mail.com",
+            "author": "1234567",
+            "pdfLink": "https://drive.google.com/file/d/1wnkLCoufS8STcBqNkEJRtXfbOy27XCD2/view?usp=sharing"
+        },
+        {
+            "id": 3,
+            "title": "Ajay",
+            "description": "ajay@mail.com",
+            "author": "123456789",
+            "pdfLink": "https://drive.google.com/file/d/1wnkLCoufS8STcBqNkEJRtXfbOy27XCD2/view?usp=sharing"
+        },
+        {
+            "id": 4,
+            "title": "Vijay",
+            "description": "vijay@mail.com",
+            "author": "1234578",
+            "pdfLink": "https://drive.google.com/file/d/1wnkLCoufS8STcBqNkEJRtXfbOy27XCD2/view?usp=sharing"
+        }
+    ]
+}
